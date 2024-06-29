@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - Ecochamp</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="shortcut icon" href="Assets/logo.png" type="image/x-icon">
+    
+    <style>
+
+  @media (max-width: 768px) {
+  #greet {
+     
+      display: unset;
+      margin-left: auto;
+    margin-right: auto;
+    border: none;
+    text-align: center;
+      
+ 
+  }
+}
+    </style>
+</head>
+<body>
+    
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="#">EcoChamp </a>
+      <img src="Assets/logo.png" alt="logo" width="100" height="100">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ranking.html">Ranking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="news.html">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="more.html">More</a>
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+</nav>
+
+      
+    <section id="featured-news" class="py-5">
+        <div class="container">
+          <center>
+            <h2>Featured News</h2>
+            <h2>_____</h2>
+            <div id="greet">
+              <h2>Featured News</h2>
+            </div>
+          </center>
+            <!-- Small Carousel for Featured News -->
+            <div id="featured-carousel" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <a target="_blank" href="https://development.asia/summary/improving-waste-management-solutions-five-asian-cities">
+                  <img class="d-block w-100" src="Assets/news1.jpg" alt="First slide">
+                  <div class="carousel-caption">
+                    <h5>Improving Waste Management: Solutions from Five Asian Cities</h5>
+                    <p>By Development Asia - [Click to Redirect]</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <a target="_blank" href="https://www.researchgate.net/publication/362228540_Problems_and_Recommendations_to_Improve_the_Solid_Waste_Management_Initiatives_of_the_Local_Government_Unit_of_Tanauan_Leyte_Philippines">
+                  <img class="d-block w-100" src="Assets/news2.jpg" alt="Second slide">
+                  <div class="carousel-caption">
+                    <h5>Problems and Recommendations to Improve the Solid Waste Management Initiatives of the Local Government Unit of Tanauan, Leyte, Philippines</h5>
+                    <p>By Research Gate - [Click to Redirect] .</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <a target="_blank" href="https://mindanaotimes.com.ph/siargao-youth-empowered-to-lead-local-climate-and-waste-management-solutions">
+                  <img class="d-block w-100" src="Assets/news3.jpg" alt="Third slide">
+                  <div class="carousel-caption">
+                    <h5>Siargao youth empowered to lead local climate and waste management solutions</h5>
+                    <p>By Mindanao Times  - [Click to Redirect].</p>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#featured-carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#featured-carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="newsletter" class="bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto text-center">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p>Stay updated with our latest news and events</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer mt-auto py-3 bg-dark text-white">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+                  <h5>About Us</h5>
+                  <p>EcoChamp is dedicated to promoting sustainable practices and fostering a cleaner future for our community.</p>
+              </div>
+              <div class="col-md-4">
+                  <h5>Quick Links</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="index.html" class="text-white">Home</a></li>
+                      <li><a href="ranking.html" class="text-white">Ranking</a></li>
+                      <li><a href="news.html" class="text-white">News</a></li>
+                      <li><a href="about.html" class="text-white">About</a></li>
+                  </ul>
+              </div>
+              <div class="col-md-4">
+                  <h5>Contact Us</h5>
+                  <ul class="list-unstyled">
+                      <li>Email: info@ecochamp.com</li>
+                      <li>Phone: +123 456 7890</li>
+                      <li>Address: 123 Eco Street, Green City, Earth</li>
+                  </ul>
+                  <div>
+                      <a href="#" class="text-white mr-2"><i class="fab fa-facebook"></i></a>
+                      <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
+                      <a href="#" class="text-white mr-2"><i class="fab fa-instagram"></i></a>
+                      <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9QK/ScQsAP7hUibX39jF0hC0H3+AHG1z5i5yT" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

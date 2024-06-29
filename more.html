@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More - EcoChamp</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="shortcut icon" href="Assets/logo.png" type="image/x-icon">
+    
+
+    <style>
+        .pdf {
+            width: 100%;
+            height: 80vh; 
+            margin: auto;
+            display: block;
+        }
+    
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    
+        h1,
+        h3 {
+            text-align: center;
+        }
+    
+        h1 {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom">
+        <div class="container">
+          <a class="navbar-brand" href="#">EcoChamp</a>
+          <img src="Assets/logo.png" alt="logo" width="100" height="100">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="ranking.html">Ranking</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="news.html">News</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="more.html">More</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <h1></h1>
+    <h3>Im hungry</h3>
+    <div class="pdf-container">
+      <iframe class="pdf-viewer" 
+              src="ECOCHAMP - TECHNOPATHS.pdf#view=FitH"
+              type="application/pdf">
+          <p>Your browser does not support iframes. <a href="ECOCHAMP - TECHNOPATHS.pdf">Download the PDF</a>.</p>
+      </iframe>
+  </div>
+    <footer class="footer mt-auto py-3 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>EcoChamp is dedicated to promoting sustainable practices and fostering a cleaner future for the community.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Home</a></li>
+                        <li><a href="ranking.html" class="text-white">Ranking</a></li>
+                        <li><a href="news.html" class="text-white">News</a></li>
+                        <li><a href="about.html" class="text-white">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: info@ecochamp.com</li>
+                        <li>Phone: +123 456 7890</li>
+                        <li>Address: 123 Eco Street, Green City, Earth</li>
+                    </ul>
+                    <div>
+                        <a href="#" class="text-white mr-2"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white mr-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12 text-center">
+                    <p>&copy; 2024 EcoChamp. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9QK/ScQsAP7hUibX39jF0hC0H3+AHG1z5i5yT" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function(){
+        $('.carousel').carousel();
+      });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoChamp</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles1.css">
+    <link rel="shortcut icon" href="Assets/logo.png" type="image/x-icon">
+    <style>
+      .navbar-dark-bg {
+        background-color: #343a40 !important;
+        transition: background-color 0.5s;
+      }
+      .modal-info {
+        cursor: pointer;
+        color: blue;
+        text-decoration: underline;
+      }
+      .map-responsive {
+        position: relative;
+        padding-bottom: 56.25%; 
+        height: 0;
+        overflow: hidden;
+      }
+      .map-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      
+      @media (max-width: 768px) {
+        .carousel-item img {
+          height: 100vh; 
+          object-fit:cover;
+        }
+      }
+      .carousel-caption {
+        bottom: 20px; 
+        text-align: center;
+      }
+      @media (max-width: 768px) {
+        .carousel-caption {
+          bottom: 10px; 
+        }
+      }
+
+      
+@media (max-width: 768px) {
+  .hide-on-small {
+    display: none !important;
+  }
+
+  .carousel-item img[src$='3.png'] {
+    display: block;
+  }
+}
+
+
+    </style>
+
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+    <script type="text/javascript">
+
+      window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer", {
+          title:{
+            text: "Total Trash (in KG) Collected in the past 5 months"              
+          },
+          data: [              
+          {
+          
+            type: "column",
+            dataPoints: [
+              { label: "January",  y: 10000 },
+              { label: "February", y: 20000 },
+              { label: "March", y: 30000  },
+              { label: "April",  y: 40000  },
+              { label: "May",  y: 50000  }
+            ]
+          }
+          ]
+        });
+        chart.render();
+      }
+
+    </script>
+</head>
+<body>
+    
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">Ecochamp </a>
+          <img src="Assets/logo.png" alt="logo" width="100" height="100">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="ranking.html">Ranking</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="news.html">News</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="more.html">More</a>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+    </nav>
+      
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="Assets/1.jpg" alt="First slide">
+            <div class="carousel-caption">
+              <h1>Technopaths</h1>
+              <p>"Born from Brief and Simple Steps, are Meaningful and Lasting Changes"</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="Assets/Logo bg.png" alt="Second slide">
+            <div class="carousel-caption">
+              <h5>EcoChamp</h5>
+              <p>Striving For A Clean Future</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 hide-on-small" src="Assets/group.jpg" alt="Third slide">
+            <img class="d-block w-100 d-sm-none" src="Assets/3.png" alt="Alternative Image">
+            <div class="carousel-caption">
+              <h5>The Team</h5>
+              <p>We care about the community and the planet.</p>
+            </div>
+          </div>
+          
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div id="map" class="container my-4">
+      <center>
+        <h2>Nation Wide Trash Tracker</h2>
+        <p>[Proof of Concept]</p>
+        <div class="map-responsive">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2294.864272803664!2d121.06444223640781!3d14.685070568832408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b0b3a10ebffd%3A0x8b186726f2ed98cf!2sFEU%20Diliman!5e0!3m2!1sen!2sph!4v1717081149470!5m2!1sen!2sph" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="mt-3">
+          <button class="btn btn-primary" data-toggle="modal" data-target="#bookEventModal">Book Event</button>
+          <button class="btn btn-secondary" data-toggle="modal" data-target="#bookCollectionModal">Book Collection</button>
+        </div>
+      </center>
+    </div>
+
+     
+  <div class="container">
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <h3>Upcoming Events</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Event</th>
+              <th>Location</th>
+              <th>Join Button</th>
+              <th>More Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>Street Clean-Up</td>
+              <td>Lowa St., QC</td>
+              <td><button class="btn btn-primary join-event">Join</button></td>
+              <td><button class="btn btn-info more-details" data-toggle="modal" data-target="#eventDetailsModal1">More Details</button></td>
+            </tr>
+            <tr>
+              <td>Neighborhood Clean-Up</td>
+              <td>Poro St., QC</td>
+              <td><button class="btn btn-primary join-event">Join</button></td>
+              <td><button class="btn btn-info more-details" data-toggle="modal" data-target="#eventDetailsModal2">More Details</button></td>
+            </tr>
+            <tr>
+              <td>Water Stream Clean-Up</td>
+              <td>Regalado St, QC</td>
+              <td><button class="btn btn-primary join-event">Join</button></td>
+              <td><button class="btn btn-info more-details" data-toggle="modal" data-target="#eventDetailsModal3">More Details</button></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Event Details Modal -->
+<div class="modal fade" id="eventDetailsModal1" tabindex="-1" role="dialog" aria-labelledby="eventDetailsModalLabel1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="eventDetailsModalLabel">Event Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Event: Street Clean Up</p>
+        <p>Location: Lowa St., QC </p>
+        <p>Name: Ernesto M. Barcenas III</p>
+        <p>Sponsor: None</p>
+        <p>No. of People: 20</p>
+        <p>Date: 30/06/2024</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="eventDetailsModal2" tabindex="-1" role="dialog" aria-labelledby="eventDetailsModalLabel2" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="eventDetailsModalLabel">Event Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Event: Neigborhood Clean-Up</p>
+        <p>Location: Poro St., QC </p>
+        <p>Name: Jay San Pascual</p>
+        <p>Sponsor: Space-X</p>
+        <p>No. of People: 15</p>
+        <p>Date: 05/07/2024</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="eventDetailsModal3" tabindex="-1" role="dialog" aria-labelledby="eventDetailsModalLabel3" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="eventDetailsModalLabel">Event Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Event: Water Stream Clean-Up</p>
+        <p>Location: Regalado St., QC </p>
+        <p>Name: Eiryk Sardalla</p>
+        <p>Sponsor: Feu-Diliman</p>
+        <p>No. of People: 35</p>
+        <p>Date: 01/07/2024</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="successMessageModal" tabindex="-1" role="dialog" aria-labelledby="successMessageModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="successMessageModalLabel">Success!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>You have successfully joined the event.</p>
+      </div>
+    </div>
+  </div>
+</div>
+    <center>
+      <div id="chartContainer" style="height: 300px; width: 50%;"></div>
+    </center>
+
+    <footer class="footer mt-auto py-3 bg-dark text-white">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+                  <h5>About Us</h5>
+                  <p>EcoChamp is dedicated to promoting sustainable practices and fostering a cleaner future for the community.</p>
+              </div>
+              <div class="col-md-4">
+                  <h5>Quick Links</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="#" class="text-white">Home</a></li>
+                      <li><a href="ranking.html" class="text-white">Ranking</a></li>
+                      <li><a href="news.html" class="text-white">News</a></li>
+                      <li><a href="about.html" class="text-white">About</a></li>
+                  </ul>
+              </div>
+              <div class="col-md-4">
+                  <h5>Contact Us</h5>
+                  <ul class="list-unstyled">
+                      <li>Email: info@ecochamp.com</li>
+                      <li>Phone: +123 456 7890</li>
+                      <li>Address: 123 Eco Street, Green City, Earth</li>
+                  </ul>
+                  <div>
+                      <a href="#" class="text-white mr-2"><i class="fab fa-facebook"></i></a>
+                      <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
+                      <a href="#" class="text-white mr-2"><i class="fab fa-instagram"></i></a>
+                      <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+          <div class="row mt-3">
+              <div class="col-md-12 text-center">
+                  <p>&copy; 2024 EcoChamp. All rights reserved.</p>
+              </div>
+          </div>
+      </div>
+    </footer>
+
+    <!-- Book Event Modal -->
+<div class="modal fade" id="bookEventModal" tabindex="-1" role="dialog" aria-labelledby="bookEventModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bookEventModalLabel">Book Event</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="eventForm">
+          <div class="form-group">
+            <label for="eventName">Event</label>
+            <select class="form-control" id="eventName" required>
+              <option value="Street Clean-Up">Street Clean-Up</option>
+              <option value="Neighborhood Clean-Up">Neighborhood Clean-Up</option>
+              <option value="Water Stream Clean-Up">Water Stream Clean-Up</option>
+              <option value="Others">Others</option>
+            </select>
+            <span class="modal-info" data-toggle="modal" data-target="#eventInfoModal">(i)</span>
+            <input type="text" class="form-control mt-2" id="otherEventName" placeholder="Specify other event" style="display:none;">
+          </div>
+          <div class="form-group">
+            <label for="eventLocation">Location</label>
+            <input type="text" class="form-control" id="eventLocation" placeholder="Enter event location" required>
+          </div>
+          <div class="form-group">
+            <label for="eventHostName">Name</label>
+            <input type="text" class="form-control" id="eventHostName" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="eventSponsor">Sponsor</label>
+            <input type="text" class="form-control" id="eventSponsor" placeholder="Enter sponsor name (optional)">
+          </div>
+          <div class="form-group">
+            <label for="eventParticipants">No. of People</label>
+            <input type="number" class="form-control" id="eventParticipants" placeholder="Enter number of people (max 100)" max="100" required>
+          </div>
+          <div class="form-group">
+            <label for="eventDate">Date</label>
+            <input type="date" class="form-control" id="eventDate" required>
+          </div>
+          <div class="form-group">
+            <label for="eventReward">Reward</label>
+            <input type="text" class="form-control" id="eventReward" placeholder="Enter reward (optional)">
+          </div>
+          <button type="submit" class="btn btn-primary">Confirm</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Event Info Modal -->
+<div class="modal fade" id="eventInfoModal" tabindex="-1" role="dialog" aria-labelledby="eventInfoModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="eventInfoModalLabel">Event Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Street Clean-Up:</strong> Gather volunteers to clean up the streets in your neighborhood (Recommended: 10-20 People).</p>
+        <p><strong>Neighborhood Clean-Up:</strong> Organize a clean-up event in your local neighborhood (Recommended: 20-30 People).</p>
+        <p><strong>Water Stream Clean-Up:</strong> Focus on cleaning up nearby water streams or rivers (Recommended: 30-40 People).</p>
+        <p><strong>Others:</strong> Specify your own event and help make a difference!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Event Confirmation Modal -->
+<div class="modal fade" id="eventConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="eventConfirmationModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="eventConfirmationModalLabel">Event Booking Confirmation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>You have successfully booked an event with the following details:</p>
+        <p><strong>Event:</strong> <span id="confirmEventName"></span></p>
+        <p><strong>Location:</strong> <span id="confirmEventLocation"></span></p>
+        <p><strong>Name:</strong> <span id="confirmEventHostName"></span></p>
+        <p><strong>Sponsor:</strong> <span id="confirmEventSponsor"></span></p>
+        <p><strong>No. of People:</strong> <span id="confirmEventParticipants"></span></p>
+        <p><strong>Date:</strong> <span id="confirmEventDate"></span></p>
+        <p><strong>Reward:</strong> <span id="confirmEventReward"></span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Book Collection Modal -->
+<div class="modal fade" id="bookCollectionModal" tabindex="-1" role="dialog" aria-labelledby="bookCollectionModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bookCollectionModalLabel">Book Collection</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="collectionForm">
+          <div class="form-group">
+            <label for="wasteType">Type of Waste</label>
+            <select class="form-control" id="wasteType" required>
+              <option value="">Select type of waste</option>
+              <option value="Plastic">Plastic</option>
+              <option value="Paper">Paper</option>
+              <option value="Glass">Glass</option>
+              <option value="Metal">Metal</option>
+              <option value="Organic">Organic</option>
+              <option value="Others">Others</option>
+            </select>
+            <input type="text" class="form-control mt-2" id="otherWasteType" placeholder="Specify other type of waste" style="display:none;">
+          </div>
+          <div class="form-group">
+            <label for="weight">Weight in kg</label>
+            <input type="number" class="form-control" id="weight" placeholder="Enter weight in kg" min="1" required>
+          </div>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" class="form-control" id="location" placeholder="Enter pickup location" required>
+          </div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="pickupDate">Time of Pickup</label>
+            <input type="datetime-local" class="form-control" id="pickupDate" required>
+          </div>
+          <button type="button" class="btn btn-primary" id="generateConfirmation">Generate</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Confirmation Modal -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmationModalLabel">Confirmation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Thank you for using our service, please be ready for the pickup!</p>
+        <p><strong>Price/Fee:</strong> <span id="priceFee"></span></p>
+        <p><strong>Collector:</strong> <span id="collector"></span></p>
+        <p><strong>Date:</strong> <span id="pickupDateConfirmation"></span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-pO/TIfkXJ6Nvzo/iVDyAj9xMi0F7ZX4/NU6l3lwXmIedobRibmXrdt5PQ7LhtJ7k" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function() {
+        $('#wasteType').on('change', function() {
+          if (this.value === 'Others') {
+            $('#otherWasteType').show();
+          } else {
+            $('#otherWasteType').hide();
+          }
+        });
+    
+        $('#generateConfirmation').on('click', function() {
+          
+          if ($('#collectionForm')[0].checkValidity()) {
+            var weight = $('#weight').val();
+            var priceFee = calculatePriceFee(weight);
+            var collector = generateRandomCollector();
+            var pickupDate = $('#pickupDate').val();
+    
+            $('#priceFee').text(priceFee);
+            $('#collector').text(collector);
+            $('#pickupDateConfirmation').text(pickupDate);
+    
+            $('#confirmationModal').modal('show');
+          } else {
+            
+            $('#collectionForm').addClass('was-validated');
+          }
+        });
+    
+        function calculatePriceFee(weight) {
+          if (weight >= 1 && weight <= 9) {
+            return 'Php 60';
+          } else if (weight >= 10 && weight <= 19) {
+            return 'Php 200';
+          } else if (weight >= 20 && weight <= 29) {
+            return 'Php 400';
+          } else if (weight >= 30 && weight <= 39) {
+            return 'Php 600';
+          } else if (weight >= 40 && weight <= 49) {
+            return 'Php 800';
+          } else {
+            // k kapag mas mataas sa 49kg bawat 1kg + 200 Php
+            var baseFee = 800;
+            var additionalWeight = weight - 40;
+            var additionalFee = Math.ceil(additionalWeight / 9) * 200;
+            var totalFee = baseFee + additionalFee;
+            return 'Php ' + totalFee;
+          }
+        }
+    
+        function generateRandomCollector() {
+          var collectors = ['Ernesto Barcenas', 'Eiryk Sardalla', 'J San Pascual', 'Johnny Sins', 'Robert Downey Jr.', 'Janray Brecip'];
+          var randomIndex = Math.floor(Math.random() * collectors.length);
+          return collectors[randomIndex];
+        }
+      });
+
+      $(document).ready(function() {
+  
+  $('#eventForm').on('submit', function(event) {
+    event.preventDefault(); 
+
+   
+    var eventName = $('#eventName').val();
+    var eventLocation = $('#eventLocation').val();
+    var eventHostName = $('#eventHostName').val();
+    var eventSponsor = $('#eventSponsor').val();
+    var eventParticipants = $('#eventParticipants').val();
+    var eventDate = $('#eventDate').val();
+    var eventReward = $('#eventReward').val();
+
+    
+    $('#confirmEventName').text(eventName);
+    $('#confirmEventLocation').text(eventLocation);
+    $('#confirmEventHostName').text(eventHostName);
+    $('#confirmEventSponsor').text(eventSponsor);
+    $('#confirmEventParticipants').text(eventParticipants);
+    $('#confirmEventDate').text(eventDate);
+    $('#confirmEventReward').text(eventReward);
+
+    
+    $('#eventConfirmationModal').modal('show');
+  });
+});
+
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 50) {
+      $('#navbar').addClass('navbar-dark-bg');
+    } else {
+      $('#navbar').removeClass('navbar-dark-bg');
+    }
+  });
+
+   
+   document.querySelectorAll('.join-event').forEach(item => {
+    item.addEventListener('click', event => {
+      $('#successMessageModal').modal('show'); 
+    });
+  });
+
+  
+  document.querySelectorAll('.more-details').forEach(item => {
+    item.addEventListener('click', event => {
+      
+    });
+  });
+
+    </script>
+</body>
+</html>
